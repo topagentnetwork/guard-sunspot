@@ -1,3 +1,4 @@
 guard 'sunspot' do
   watch('Gemfile.lock')
+  watch('config/sunspot.yml')
 end
