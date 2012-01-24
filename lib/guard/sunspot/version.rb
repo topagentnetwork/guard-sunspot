@@ -1,5 +1,5 @@
 module Guard
-  module Sunspot
+  module SunspotVersion
     VERSION = "0.0.1"
   end
 end

@@ -1,6 +1,6 @@
 require "guard"
 require "guard/guard"
-require "guard-sunspot/version"
+require "guard/sunspot/version"
 
 module Guard
   class Sunspot < Guard

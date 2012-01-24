@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "guard-sunspot/version"
+require "guard/sunspot/version"
 
 Gem::Specification.new do |s|
   s.name        = "guard-sunspot"
-  s.version     = Guard::Sunspot::VERSION
+  s.version     = Guard::SunspotVersion::VERSION
   s.authors     = ["John Hampton"]
   s.email       = ["john@topagentnetwork.com"]
   s.homepage    = "http://github.com/cleanoffer/guard-sunspot"
