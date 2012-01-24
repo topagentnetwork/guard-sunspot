@@ -1,0 +1,3 @@
+guard 'sunspot' do
+  watch('Gemfile.lock')
+end

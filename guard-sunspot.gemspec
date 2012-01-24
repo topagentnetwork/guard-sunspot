@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Guard::Sunspot::VERSION
   s.authors     = ["John Hampton"]
   s.email       = ["john@topagentnetwork.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://github.com/cleanoffer/guard-sunspot"
+  s.summary     = 'Guard gem for sunspot solr'
+  s.description = 'Guard::Sunspot automatically starts and stops your solr server.'
 
   s.rubyforge_project = "guard-sunspot"
 
@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
   s.add_runtime_dependency "guard"
+  s.add_runtime_dependency "sunspot_solr"
 end
