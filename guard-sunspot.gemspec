@@ -5,9 +5,9 @@ require "guard/sunspot/version"
 Gem::Specification.new do |s|
   s.name        = "guard-sunspot"
   s.version     = Guard::SunspotVersion::VERSION
-  s.authors     = ["John Hampton"]
-  s.email       = ["john@topagentnetwork.com"]
-  s.homepage    = "http://github.com/cleanoffer/guard-sunspot"
+  s.authors     = ["John Hampton", "Anthony Smith"]
+  s.email       = ["john@topagentnetwork.com", "anthony@sticksnleaves.com"]
+  s.homepage    = "http://github.com/anthonator/guard-sunspot"
   s.summary     = 'Guard gem for sunspot solr'
   s.description = 'Guard::Sunspot automatically starts and stops your solr server.'
 
