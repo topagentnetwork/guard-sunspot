@@ -9,15 +9,16 @@ module Guard
 
       @environment = options[:environment] || 'development'
       @bundler = options.fetch(:bundler, false)
+      @zeus = options.fetch(:zeus, false)
     end
 
     def start
-      system "#{command_prefix} rake sunspot:solr:start RAILS_ENV=#{@environment}"
+      system "#{rake} sunspot:solr:start RAILS_ENV=#{@environment}"
       UI.info "Sunspot started"
     end
 
     def stop
-      system "#{command_prefix} rake sunspot:solr:stop RAILS_ENV=#{@environment}"
+      system "#{rake} sunspot:solr:stop RAILS_ENV=#{@environment}"
       UI.info "Sunspot stopped"
     end
 
@@ -32,8 +33,12 @@ module Guard
 
     private
 
-    def command_prefix
-      "bundle exec" if @bundler
+    def rake
+      rake = []
+      rake << "bundle exec" if @bundler
+      rake << "zeus" if @zeus
+      rake << "rake"
+      rake.join ' '
     end
   end
 end
