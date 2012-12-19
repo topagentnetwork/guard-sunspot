@@ -8,15 +8,16 @@ module Guard
       super
 
       @environment = options[:environment] || 'development'
+      @bundler = options.fetch(:bundler, false)
     end
 
     def start
-      system("rake sunspot:solr:start RAILS_ENV=#{@environment}")
+      system "#{command_prefix} rake sunspot:solr:start RAILS_ENV=#{@environment}"
       UI.info "Sunspot started"
     end
 
     def stop
-      system("rake sunspot:solr:stop RAILS_ENV=#{@environment}")
+      system "#{command_prefix} rake sunspot:solr:stop RAILS_ENV=#{@environment}"
       UI.info "Sunspot stopped"
     end
 
@@ -27,6 +28,12 @@ module Guard
 
     def run_on_change(path)
       reload
+    end
+
+    private
+
+    def command_prefix
+      "bundle exec" if @bundler
     end
   end
 end
