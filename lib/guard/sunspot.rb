@@ -25,7 +25,7 @@ module Guard
       start
     end
 
-    def run_on_change(path)
+    def run_on_changes(path)
       reload
     end
   end
