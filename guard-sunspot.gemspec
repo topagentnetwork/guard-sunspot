@@ -10,17 +10,19 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/cleanoffer/guard-sunspot"
   s.summary     = 'Guard gem for sunspot solr'
   s.description = 'Guard::Sunspot automatically starts and stops your solr server.'
+  s.license     = 'MIT'
 
   s.rubyforge_project = "guard-sunspot"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  s.files        = Dir.glob('{lib}/**/*') + %w[LICENSE Readme.md]
+  s.require_path = 'lib'
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
-  s.add_runtime_dependency "guard"
-  s.add_runtime_dependency "sunspot_solr"
+  s.add_dependency 'guard', '>= 2.0'
+  s.add_dependency('guard-compat', '~> 0.3')
+  s.add_dependency "sunspot_solr"
+
+  s.add_development_dependency 'rspec', '~> 3.0'
+  s.add_development_dependency 'timecop'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'poltergeist'
 end

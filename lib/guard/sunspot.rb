@@ -1,13 +1,12 @@
-require "guard"
-require "guard/guard"
+require 'guard/compat/plugin'
 require "guard/sunspot/version"
 
 module Guard
-  class Sunspot < Guard
-    def initialize(watchers=[], options={})
+  class Sunspot < Plugin
+    def initialize(options={})
       super
 
-      @environment = options[:environment] || 'development'
+      @environment = options.fetch(:environment, 'development')
       @bundler = options.fetch(:bundler, false)
       @zeus = options.fetch(:zeus, false)
     end
@@ -27,9 +26,11 @@ module Guard
       start
     end
 
-    def run_on_change(path)
+    def run_on_changes(path)
       reload
     end
+    # for guard 1.0.x and earlier
+    alias :run_on_change :run_on_changes
 
     private
 
