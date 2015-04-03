@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "guard-sunspot"
 
-  s.files        = Dir.glob('{lib}/**/*') + %w[LICENSE Readme.md]
+  s.files        = Dir.glob('{lib}/**/*') + %w[LICENSE README.md]
   s.require_path = 'lib'
 
   s.add_dependency 'guard', '>= 2.0'
