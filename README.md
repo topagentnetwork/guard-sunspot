@@ -23,9 +23,11 @@ $ guard init sunspot
 
 ## Options
 You can set RAILS\_ENV by setting the  `:environment` option.
+You can use bundler by setting the  `:bundler` option. The default is false.
+You can use zeus by setting the  `:bundler` option. The default is false.
 
 ```ruby
-guard 'sunspot', :environment => 'development' do
+guard 'sunspot', :environment => 'development', :bundler => true, :zeus => false do
   watch('Gemfile.lock')
   watch('config/sunspot.yml')
 end
